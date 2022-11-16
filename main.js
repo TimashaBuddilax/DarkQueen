@@ -2235,6 +2235,27 @@ if (isBanChat) return reply(mess.banChat)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break  
+		     case 'setalive': {
+               if (!isCreator) return replay(`${mess.owner}`)
+               if (!text) return replay(`.setalive hello \n  i am alive now \n how can i help you`)
+          global.alive = text
+          reply('*sᴜᴄᴄᴇssꜰᴜʟ ᴄʜᴀɴɢᴇᴅ ᴀʟɪᴠᴇ ᴍᴇssᴀɢᴇ*\n '+'```'+global.alive+ '```')
+            }
+            break
+		 case 'setlang': {
+               if (!isCreator) return replay(`${mess.owner}`)
+               if (!text) return replay(`.setalive hello \n  i am alive now \n how can i help you`)
+          global.LANG = text
+          reply('*sᴜᴄᴄᴇssꜰᴜʟ ᴄʜᴀɴɢᴇᴅ ʟᴀɴɢᴜᴀɢᴇ*\n '+'```'+global.LANG+ '```')
+            }
+            break
+            case 'setwelcome': {
+               if (!isCreator) return replay(`${mess.owner}`)
+               if (!text) return replay(`.setalive hello \n  i am alive now \n how can i help you`)
+          global.WELCOME_MSG = text
+          reply('*sᴜᴄᴄᴇssꜰᴜʟ ᴄʜᴀɴɢᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇ*\n '+'```'+global.WELCOME_MSG+ '```')
+            }
+            break
             case 'join': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -8034,57 +8055,61 @@ sourceUrl: anu.url
 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 }
 break
-case 'ytvvv': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-if (!args[0]) return reply(mess.linkm)
-try {
-hx.youtube(args[0]).then(async(res) => {
-textyt = `*| YOUTUBE DOWNLOADER |*
-
-${global.themeemoji} Title : ${res.title}
-${global.themeemoji} Size : ${res.size}
-${global.themeemoji} Quality : ${res.quality}
-
-_Select video or audio and wait a while_`
-let buttons = [
-{buttonId: `ytvd ${res.link}`, buttonText: {displayText: '► Video'}, type: 1},
-{buttonId: `ytad ${res.mp3}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-]
-let buttonMessage = {
-image: {url:res.thumb},
-caption: textyt,
-footer: `${botname}`,
-buttons: buttons,
-headerType: 4,
-contextInfo:{externalAdReply:{
-title: res.title,
-body: `${global.ownername}`,
-thumbnail: {url:res.thumb},
-mediaType:2,
-mediaUrl: args[0],
-sourceUrl: args[0]
-}}
-}
-XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
-}).catch(_ => _)
-} catch {
-reply("Link error!")
-}
-}
-break
-case 'ytvd': {
-   if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)
-XeonBotInc.sendMessage(from, {video:{url:args[0]}, mimetype:"video/mp4", caption:"Success", contextInfo:{externalAdReply:{
-title:`${global.botname}`,
-body:`${global.botname}`,
-thumbnail: log0,
-mediaType:2,
-mediaUrl: `${global.websitex}`,
-sourceUrl: `${global.websitex}`
-}}}, {quoted:m})
-}
+case 'video': {  
+                          await XeonBotInc.sendMessage(from, { react: { text: `📽️`, key: m.key }})
+                                  if (!text) throw `Example : *${prefix + command} oba mage hadawathe paladuwa*`
+                                  var Down = await XeonBotInc.sendText(m.chat, '*I am searching your video*')
+	                          await XeonBotInc.sendMessage(m.chat,{delete : Upload.key })
+                                  let yts = require("yt-search")
+                                  var svid = text.replace("shorts/","watch?v=")
+                                  var s2vid = svid.replace("?feature=share","")
+                                  var search = await yts(s2vid);
+                                  
+                                  let tima = search.all           
+                                                          
+                                      ngen = `⫷[ *👸 𝙼𝙴𝙻𝙸𝚂𝙰 𝚈𝙾𝚄𝚃𝚄𝙱𝙴 𝚅𝙸𝙳𝙴𝙾 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳𝙴𝚁 👸* ]⫸
+*ᴀʙᴏᴜᴛ ʏᴏᴜʀ ᴠɪᴅᴇᴏ...*
+ ➥ ᴛɪᴛʟᴇ -  ${search.all[0].title}
+ ➥ ᴠɪᴇᴡs - ${search.all[0].views}
+ ➥ ᴅᴜʀᴀᴛɪᴏɴ - ${search.all[0].timestamp}
+ ➥ ᴜᴘʟᴏᴀᴅ ᴏɴ - ${search.all[0].ago}
+ ➥ ᴜʀʟ - ${search.all[0].url}
+`,
+                  message = await prepareWAMessageMedia({ image : { url: tima[0].thumbnail } }, { upload:   XeonBotInc.waUploadToServer })
+                                  template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                                      templateMessage: {
+                                          hydratedTemplate: {
+                                              imageMessage: message.imageMessage,
+                                              hydratedContentText: ngen,
+                                              hydratedFooterText: `ǫᴜᴇᴇɴ ᴍᴇʟɪsᴇ ᴘᴜʙʟɪᴄ ᴇᴅɪᴛɪᴏɴ`,
+                                              hydratedButtons: [{
+                                                  urlButton: {
+                                                      displayText: 'ɢᴏ ᴛᴏ ʏᴏᴜᴛᴜʙᴇ',
+                                                      url: `${search.all[0].url}`
+                                                  }
+                                              }, {
+                                                  quickReplyButton: {
+                                                      displayText: '360p',
+                                                      id: `ytmp4 ${search.all[0].url} 360p`
+                                                      }
+                                                 }, {
+                                                  quickReplyButton: {
+                                                      displayText: '480p',
+                                                      id: `vid2 ${search.all[0].url} 480p`
+                                                      }
+                                                  
+                                              }, {
+                                                  quickReplyButton: {
+                                                      displayText: '720p',
+                                                      id: `720ytmp4 ${search.all[0].url} `
+                                                      }
+                                                  
+                                              }]
+                                          }
+                                      }
+                                  }), { userJid: m.chat, quoted: m })
+                                    XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id }).catch((err) => m.reply('*Sorry, your video is not avaible*'))
+                              }
 break
 case 'ytad': {
    if (isBan) return reply(mess.ban)	 			
