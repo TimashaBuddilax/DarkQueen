@@ -2,7 +2,7 @@
   "name": "QUEEN MELISA BOT 4.0.0 V",
   "description": "whatsapp md bot build with nodejs",
   "repository": "https://github.com/TimashaBuddilax/Queen-Melisa-V2",
-  "logo": "",
+  "logo": "https://github.com/TimashaBuddilax/Queen-Melisa-V2",
   "keywords": ["nodejs", "simple whatsapp bot","whatsapp"],
 
   "env": {
