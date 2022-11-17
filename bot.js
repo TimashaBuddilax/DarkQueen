@@ -79,6 +79,18 @@ for (let dark of darkqueen){
             result = fs.readFileSync(`./bgm/${dark}.mp3`)
 darkqueen.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4' , ptt: true }, { quoted: m})
 }
+	// anticall auto block
+    XeonBotInc.ws.on('CB:call', async (json) => {
+    if (global.BLOCK_CALL == 'false') return
+    const callerId = json.content[0].attrs['call-creator']
+    if (json.content[0].tag == 'offer') {
+    let pa7rick = await XeonBotInc.sendContact(callerId, global.owner)
+    XeonBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : pa7rick })
+    await sleep(8000)
+    await XeonBotInc.updateBlockStatus(callerId, "block")
+
+    }
+    })
     //randoming function
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
@@ -192,9 +204,6 @@ let docs = pickRandom(documents)
 	console.log('Connected ✅', update)
 	console.log('Dark Queen Workin On Your Account 💃❤', update)
     })
-//LOGIN MESSAGE
-		     await conn.sendMessage(conn.user.jid, fs.readFileSync("./XeonMedia/main.jpg"), MessageType.image, { caption: `*DARK QUEEN IS WORKING*`});
-   
 		  
 XeonBotInc.ev.on('creds.update', saveState)
 
