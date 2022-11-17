@@ -30,6 +30,13 @@ global.doc4 = 'application/zip'
 global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
+//Heroku Functions
+global.HEROKU = {
+    API: process.env.HEROKU_API,
+    NAME : process.env.APP_NAME,
+    STATUS : true
+}
+
 //owmner v card
 global.vcardowner = ['916909137213'] //ur owner number
 global.ownername = "🦄Dream Guy Xeon" //ur owner name
@@ -97,6 +104,27 @@ global.mess = {
     nsfw: 'The nsfw feature has not been activated, please contact the admin to activate',
     banChat: 'The bot was banned in this group, please contact the owner to unban'
 }
+global.owner= [process.env.OWNER_NUMBER] || ['94715264791'] // Owner number , (අයිතිකරුගේ නම්බර් එක )
+global.alivelogo = process.env.ALIVE_LOGO || `https://telegra.ph/file/1a2dee71baa975091620d.jpg`
+global.alive = process.env.ALIVE_MESSAGE
+global.cap = process.env.CAPTION
+global.AUTO_BIO = process.env.AUTO_BIO || 'off'
+global.INBOX_BLOCK = process.env.INBOX_BLOCK || 'off'
+global.AUTO_REACT = process.env.AUTO_REACT || 'true'
+global.ANTI_BADWORD = process.env.ANTI_BADWORD || 'true'
+global.botnma = process.env.BOT_NAME || 'QUEEN MELISA' 
+global.ownernma = process.env.OWNER_NAME || 'MR TIMA' 
+global.packname = process.env.STICKER_PACK_NAME || 'ඉදලා ගිය උන්ට පින් පිනිස #bye' 
+global.author = process.env.STICKER_AUTHOR_NAME || 'MADE BY WHATSAPP' 
+global.antilink = process.env.ANTI_LINK || 'true'
+global.WELCOME_MSG = process.env.WELCOME_MSG
+global.GOODBYE_MSG = process.env.GOODBYE_MSG
+global.INBOX_BLOCK_MSG = process.env.INBOX_BLOCK_MSG || 'BLOCK !!!'
+global.BLOCK_CHAT = 'setgrp'
+global.BLOCK_CALL = process.env.BLOCK_CALLERS || 'false'
+global.SEND_WELCOME = process.env.SEND_WELCOME_MASSAGE || 'false'
+global.OWNER_REACT = '💻'
+
     global.limitawal = {
     premium: "Infinity",
     free: 12,
