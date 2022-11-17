@@ -1,23 +1,175 @@
 {
-  "name": "DARK-QUEEN",
-  "description": "MULTI DEVICE VERSION",
-  "repository": "https://github.com/TimashaBuddilax/DarkQueen",
-  "logo": "https://telegra.ph/file/ab7cc697ac6fd4eb4809b.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+  "name": "QUEEN MELISA BOT 4.0.0 V",
+  "description": "whatsapp md bot build with nodejs",
+  "repository": "https://github.com/TimashaBuddilax/Queen-Melisa-V2",
+  "logo": "",
+  "keywords": ["nodejs", "simple whatsapp bot","whatsapp"],
+
   "env": {
-      "HEROKU_API_KEY": {
-            "description": "",
-            "required": true
-        },
-      "HEROKU_APP_NAME": {
-            "description": "",
-            "required": true
-        },
-      "WHATSAPP_NUMBER": {
-            "description": "",
-            "required": true
-        }
+
+"APP_NAME": {
+  "description": "HEROKU APP NAME",
+  "required": true
+},
+
+"HEROKU_API": {
+  "description": "HEROKU API KEY",
+  "required": true
+},
+
+"OWNER_NUMBER" :{
+  "description" : "OWNER NUMBER",
+  "required" : false,
+  "value" :"94715166712"
   },
+
+ "ALIVE_MESSAGE" :{
+  "description" : "TYPE YOUR ALIVE MASSAGE",
+  "required" : false,
+"value" : "default"
+  },
+
+"CAPTION" :{
+  "description" : "YOUR CAPTION",
+  "requred" : false,
+  "value" : "© 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 𝚀𝚄𝙴𝙴𝙽 𝙼E𝙻𝙸𝚂𝙰"
+  },
+  
+  "SEND_WELCOME_MASSAGE" :{
+  "description" : "SEND WELCOME & GOODBYE MASSAGES [ true / false]",
+  "required" : true,
+    "value" : "false"
+  },
+
+  "LANGUAGE" :{
+  "descrption" : "SELECT YOUR BOT LANGUAGE [ SI - sinhala / EN - english ]",
+  "requred" : true,
+  "value" : "EN"
+  },
+
+  "ANTI_LINK" :{
+  "description" : "REMOVE GROUP LINK SEND MEMBERS [ true / false ]",
+  "requred" : false,
+  "value" : "false"
+  },
+
+  "BOT_NAME" :{
+  "description" : "YOUR BOT NAME",
+  "requred" : false,
+  "value" :"𝖰𝖴𝖤𝖤𝖭 MELISA 𝖵4"
+  },
+
+  "OWNER_NAME" :{
+  "description" : "YOUR NAME",
+  "requred" : false,
+  "value" :"ᴍʀ ᴛɪᴍᴀ (ᴅᴇᴇɪᴋɢ ᴛᴇᴀᴍ)"
+  },
+
+  "ALIVE_LOGO" :{
+  "description" : "YOUR BOT ALIVE LOGO GET YOUR LINK UPLOAD imgbb.com WEB SITE ",
+  "requred" : true,
+  "value" :"https://telegra.ph/file/b3f17c16eedf99731a52d.jpg"
+  },
+
+  "WELCOME_MSG" :{
+  "description" : "YOUR WELCOME MASSAGE",
+  "required" : false,
+    "value" :""
+  },
+
+  "GOODBYE_MSG" :{
+  "description" : "YOUR GOODBYE MASSAGE",
+  "required" : false,
+    "value" :""
+  },
+
+  "SUCCESS_MSG" :{
+  "description" : "SUCCESS MASSAGE",
+  "requred" : true,
+  "value" :"YOUR WORK DONE !"
+  },
+
+  "ADMIN_MSG" :{
+  "description" : "ADMIN ONLY MASSAGE",
+  "requred" : true,
+  "value" :"This command is admin only command"
+  },
+
+  "WAIT_MSG" :{
+  "description" : "YOUR BOT WAIT MASSAGE",
+  "requred" : true,
+  "value" :"please wait..."
+  },
+
+  "PREFA" :{
+  "description" : "NO NEED CHANGE IT",
+  "requred" : true,
+  "value" :"['#','!','/','']"
+  },
+
+  "AUTO_BIO" :{
+  "description" : "if you want show time and date on your whatsapp bio",
+  "required" : true,
+  "value" :"off"
+  },
+
+  "INBOX_BLOCK" :{
+  "description" : "BLOCK INBOX USERS [ on / off ]",
+  "requred" : true,
+  "value" :"off"
+  },
+
+  "AUTO_REACT" :{
+  "description" : "AUTO REACT SEND [ true / false ]",
+  "requred" : true,
+  "value" :"false"
+  },
+
+"ANTI_BADWORD" :{
+  "description" : "REMOVE BAD WORD SENDERS [ true / false ]",
+  "requred" : true,
+  "value" :"false"
+  },
+
+"BAD_KICK_MASSAGE" :{
+  "description" : "BAD KICK MASSAGE",
+  "requred" : false,
+  "value" :"bye bye"
+  },
+
+"INBOX_BLOCK_MSG" :{
+  "description" : "INBOX USER BLOCK MASSAGE",
+  "required" : true,
+  "value" :"*INBOX BLOCK ACTIVATE BY BOT OWNER*"
+  },
+ "SONG_DOWNLOAD" :{
+  "description" : "SONG DOWNLOADING MASSAGE",
+  "required" : true,
+  "value" :"🔁 SERACHING YOUR SONG"
+  },
+ "SONG_UPLOAD" :{
+  "description" : "SONG UPLOADING MASSAGE",
+  "required" : true,
+  "value" :"📤 UPLOADING YOUR SONG"
+  },
+ "VOICE_REPLY" :{
+  "description" : "REPLY GIRL VOICE",
+  "required" : true,
+  "value" :"true"
+  },
+   "TIME_ZONE" :{
+  "description" : "YOUR TIME ZONE",
+  "required" : true,
+  "value" :"Asia/Colombo"
+  },
+   "NUMBER_212_BLOCK" :{
+  "description" : "BLOCK +212 INBOX MASSAGE SENDERS",
+  "required" : true,
+  "value" :"true"
+  },
+  
+  },
+
   "buildpacks": [
     {
       "url": "heroku/nodejs"
