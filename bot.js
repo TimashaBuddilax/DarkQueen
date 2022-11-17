@@ -202,7 +202,6 @@ let docs = pickRandom(documents)
         console.log('Installed ✅', update)
 	console.log('Connecting To Whatsapp...', update)
 	console.log('Connected ✅', update)
-	console.log('Dark Queen Workin On Your Account 💃❤', update)
     })
 		  
 XeonBotInc.ev.on('creds.update', saveState)
